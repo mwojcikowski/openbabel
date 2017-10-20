@@ -512,11 +512,6 @@ OBMol.SetData = exception
 
 %include "stereo.i"
 
-namespace std {
 // expose OB version to python
-const char* __version__ = BABEL_VERSION;
-%immutable;
-const char* __version__;
-%mutable;
-}
+%constant const char* __version__ = BABEL_VERSION;
 
