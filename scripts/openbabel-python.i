@@ -227,6 +227,8 @@ CAST_GENERICDATA_TO(SquarePlanarStereo)
 %ignore *::operator[];
 
 %import <openbabel/babelconfig.h>
+// expose OB version to python
+%constant const char* __version__ = BABEL_VERSION;
 
 %include <openbabel/data.h>
 %include <openbabel/rand.h>
@@ -511,7 +513,4 @@ OBMol.SetData = exception
 %}
 
 %include "stereo.i"
-
-// expose OB version to python
-%constant const char* __version__ = BABEL_VERSION;
 
