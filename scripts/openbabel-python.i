@@ -228,11 +228,6 @@ CAST_GENERICDATA_TO(SquarePlanarStereo)
 
 %import <openbabel/babelconfig.h>
 
-// expose OB version to python
-%immutable;
-const char* __version__ = BABEL_VERSION;
-%mutable;
-
 %include <openbabel/data.h>
 %include <openbabel/rand.h>
 %include <openbabel/obutil.h>
@@ -516,3 +511,12 @@ OBMol.SetData = exception
 %}
 
 %include "stereo.i"
+
+namespace std {
+// expose OB version to python
+const char* __version__ = BABEL_VERSION;
+%immutable;
+const char* __version__;
+%mutable;
+}
+
